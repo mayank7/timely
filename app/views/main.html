@@ -1,0 +1,101 @@
+<div layout="column"  class="main">
+
+  <!--Main content area starts-->
+  <md-content class="main-content" etest-content style="margin-top:0px;min-height: calc(100vh - 64px)" ui-view>
+    <h1 class="head-title">Timely</h1>
+    <h2 class="tag-line">Set your preferences!</h2>
+    <div layout="row"       layout-align="center start" layout-padding>
+      <div class="padded" md-whiteframe="24"  flex-sm="70" flex-gt-sm="70" flex-md="70" layout="column" layout-align="center center" style="background-color: #fff;">
+        <div layout="row"       layout-align="center center" layout-padding style="width: 95%;">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Project/Assignment</label>
+            <input ng-model="vm.preferences.project">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Sub-Project</label>
+            <input ng-model="vm.preferences.subProject">
+          </md-input-container>
+        </div>
+        <div layout="row"       layout-align="center center" layout-padding style="width: 95%;">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Location</label>
+            <input ng-model="vm.preferences.location">
+          </md-input-container>
+          <md-switch class="md-primary" md-no-ink aria-label="Switch No Ink" ng-model="vm.preferences.billable">
+            Billable
+          </md-switch>
+        </div>
+        <div layout="row"       layout-align="center center" layout-padding style="width: 95%;">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Monday</label>
+            <input ng-model="vm.preferences.monday" type="number">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Tuesday</label>
+            <input ng-model="vm.preferences.tuesday" type="number">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Wednesday</label>
+            <input ng-model="vm.preferences.wednesday" type="number">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Thursday</label>
+            <input ng-model="vm.preferences.thursday" type="number">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Friday</label>
+            <input ng-model="vm.preferences.friday" type="number">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Saturday</label>
+            <input ng-model="vm.preferences.saturday" type="number">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Sunday</label>
+            <input ng-model="vm.preferences.sunday" type="number">
+          </md-input-container>
+
+        </div>
+        <md-divider style="width: 100%;"></md-divider>
+        <md-button class="md-raised md-primary" ng-click="vm.savePreferences();">
+          Save Preferences
+        </md-button>
+      </div>
+    </div>
+
+  </md-content>
+  <!--Main content area ends-->
+
+  <div style="bottom: 0;right:0;position: fixed;z-index: 1002;" ng-init="isOpen=false">
+
+    <md-fab-speed-dial md-open="isOpen" md-direction="up" class="md-scale md-fab-bottom-right"
+                       ng-mouseenter="isOpen=true" ng-mouseleave="isOpen=false">
+      <md-fab-trigger>
+        <md-button aria-label="menu" class="md-fab md-primary">
+          <md-icon md-font-set="fa fa-bars fa-2x " style="vertical-align: text-bottom;"></md-icon>
+        </md-button>
+      </md-fab-trigger>
+      <md-fab-actions>
+        <md-button aria-label="facebook" class="md-fab md-raised md-mini  facebook" ui-sref="main.notification">
+          <md-icon md-font-set="fa fa-bell-o fa-2x  " class="facebook"></md-icon>
+        </md-button>
+        <md-button aria-label="Google+" class="md-fab md-raised md-mini google" ui-sref="main">
+          <md-icon md-font-set="fa fa-gear fa-2x " class="google"></md-icon>
+        </md-button>
+        <md-button aria-label="GitHub" class="md-fab md-raised md-mini github"
+                   ng-href="https://www.github.com/vikashvverma" target="_blank">
+          <md-icon md-font-set="fa fa-github fa-2x " class="github"></md-icon>
+        </md-button>
+      </md-fab-actions>
+    </md-fab-speed-dial>
+  </div>
+  <!--Footer-->
+  <md-toolbar style="background-color: #202020;">
+
+    <span style="text-align: center;font-size:14px;line-height: 64px;">&copy; <a href="https://www.github.com/vikashvverma/timely"
+                                                                                 target="_blank"
+                                                                                 style="color:#428bca;text-decoration: none;">
+      Timely</a>, All Rights Reserved</span>
+  </md-toolbar>
+</div>

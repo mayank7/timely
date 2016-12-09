@@ -1,0 +1,139 @@
+<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--transparent">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Title</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Title</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Link</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content" ui-view>
+    <div class="android-wear-section">
+      <div class="android-wear-band">
+        <div class="android-wear-band-text">
+          <div class="mdl-typography--display-2 mdl-typography--font-thin">
+            Timely
+          </div>
+          <p class="mdl-typography--headline mdl-typography--font-thin">
+            Set your preferences
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--2-col"></div>
+      <div class="mdl-cell mdl-cell--8-col">
+        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title">
+            <label class="mdl-color-text--blue-A400">Set your project/assignment details!</label>
+          </div>
+            <div class="mdl-grid inner">
+              <div class="mdl-cell mdl-cell--6-col ">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="project" ng-model="vm.preferences.project">
+                  <label class="mdl-textfield__label" for="project">Project/Assignment</label>
+                  <span class="mdl-textfield__error">Enter a valid project/assignment!</span>
+                </div>
+              </div>
+              <div class="mdl-cell mdl-cell--6-col ">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="subProject" ng-model="vm.preferences.subProject">
+                  <label class="mdl-textfield__label" for="subProject">Sub-Project</label>
+                  <span class="mdl-textfield__error">Enter a valid sub-project!</span>
+                </div>
+              </div>
+            </div>
+          <div class="mdl-grid inner">
+              <div class="mdl-cell mdl-cell--6-col ">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="location" ng-model="vm.preferences.location">
+                  <label class="mdl-textfield__label" for="location">Location</label>
+                  <span class="mdl-textfield__error">Enter a valid location</span>
+                </div>
+              </div>
+              <div class="mdl-cell mdl-cell--6-col ">
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="billable">
+                  <input type="checkbox" id="billable" class="mdl-switch__input" checked ng-model="vm.preferences.billable">
+                  <span class="mdl-switch__label">Billable?</span>
+                </label>
+              </div>
+            </div>
+          <div class="mdl-card__title">
+            <label class="mdl-color-text--blue-A400">Set your default working hours</label>
+          </div>
+          <div class="mdl-grid inner">
+              <div class="mdl-cell mdl-cell--2-col ">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="monday" value="{{vm.preferences.monday}}" ng-model="vm.preferences.monday">
+                  <label class="mdl-textfield__label" for="monday" >Monday</label>
+                  <span class="mdl-textfield__error">Enter a valid number for Monday</span>
+                </div>
+              </div>
+            <div class="mdl-cell mdl-cell--2-col ">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="tuesday" value="{{vm.preferences.tuesday}}" ng-model="vm.preferences.tuesday">
+                  <label class="mdl-textfield__label" for="tuesday" >Tuesday</label>
+                  <span class="mdl-textfield__error">Enter a valid number for Tuesday</span>
+                </div>
+              </div>
+            <div class="mdl-cell mdl-cell--2-col ">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="wednesday" value="{{vm.preferences.wednesday}}" ng-model="vm.preferences.wednesday">
+                  <label class="mdl-textfield__label" for="wednesday" >Wednesday</label>
+                  <span class="mdl-textfield__error">Enter a valid number for Wednesday</span>
+                </div>
+              </div>
+            <div class="mdl-cell mdl-cell--2-col ">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="thursday" value="{{vm.preferences.thursday}}" ng-model="vm.preferences.thursday">
+                  <label class="mdl-textfield__label" for="thursday" >Thursday</label>
+                  <span class="mdl-textfield__error">Enter a valid number for Thursday</span>
+                </div>
+              </div>
+            <div class="mdl-cell mdl-cell--2-col ">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="friday" value="{{vm.preferences.friday}}" ng-model="vm.preferences.friday">
+                  <label class="mdl-textfield__label" for="friday" >Friday</label>
+                  <span class="mdl-textfield__error">Enter a valid number for Friday</span>
+                </div>
+              </div>
+            <div class="mdl-cell mdl-cell--2-col ">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="saturday" value="{{vm.preferences.saturday}}" ng-model="vm.preferences.saturday">
+                  <label class="mdl-textfield__label" for="saturday" >Saturday</label>
+                  <span class="mdl-textfield__error">Enter a valid number for Saturday</span>
+                </div>
+              </div>
+            <div class="mdl-cell mdl-cell--2-col ">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="sunday" value="{{vm.preferences.sunday}}" ng-model="vm.preferences.sunday">
+                  <label class="mdl-textfield__label" for="sunday" >Sunday</label>
+                  <span class="mdl-textfield__error">Enter a valid number for Sunday</span>
+                </div>
+              </div>
+            </div>
+
+          <div class="mdl-card__supporting-text">
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="vm.savePreferences();">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col"></div>
+    </div>
+    <div id="toast-container" class="mdl-js-snackbar mdl-snackbar mdl-color--deep-orange">
+      <div class="mdl-snackbar__text"></div>
+      <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+  </main>
+</div>

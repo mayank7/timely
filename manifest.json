@@ -1,0 +1,55 @@
+{
+  "manifest_version": 2,
+  "name": "Timely",
+  "description": "Reminds you to fill your time sheet timely",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://pse.na32.visual.force.com/apex/PSATimecardEntry",
+        "https://pse.na32.visual.force.com/apex/*"
+      ],
+      "js": [
+        "jquery.min.js",
+        "autofill.js"
+      ],
+      "css": [
+        "main.css"
+      ]
+    }
+  ],
+  "page_action": {
+    "default_icon": "app/images/yeoman.png",
+    "default_popup": "app/index.html",
+    "default_title": "Timely"
+  },
+  "options_ui": {
+    // Required.
+    "page": "app/index.html",
+    // Recommended.
+    "chrome_style": true,
+    // Not recommended; only provided for backwards compatibility,
+    // and will be unsupported in a future version of Chrome (TBD).
+    "open_in_tab": true
+  },
+  // "browser_action": {
+  // "default_popup": "app/index.html",
+  // "default_icon" : "app/images/yeoman.png"
+  //},
+  "background": {
+    "scripts": [
+      "context.js"
+    ]
+  },
+  "permissions": [
+    "contextMenus",
+    "debugger",
+    "storage",
+    "tabs",
+    "*://*/*",
+    "activeTab",
+    "alarms",
+    "notifications"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
